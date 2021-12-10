@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
     <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <link rel="manifest" href="/manifest.json"> 
 </head>
 
 <body class="grey lighten-4">
@@ -43,12 +44,20 @@
 
     <div class="container">
         <div class="section">
-            <p>This is the Login page for exisiting users.</p><br>
-            <a href="/pages/newuser.html" class="waves-effect waves-light btn-flat">New User</a>
-            <a href="/pages/existinguser.html" class="waves-effect waves-light btn-flat">Existing User</a>
+            <form id="new-user-form">
+                <div class="container">
+                  <h2>Login</h1><br>
+                  <label for="email"><b>Email</b></label>
+                  <input type="text" placeholder="Enter Email" name="email" id="email" required>
+                  <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+                  <button id="login" type="submit" class="waves-effect btn-flat">Login</button>
+                  <a href="/pages/newuser.html" class="waves-effect waves-light btn-flat">New User</a>
+                </div> 
+              </form>  
         </div>
     </div>
-
     <script src="/js/ui.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>
