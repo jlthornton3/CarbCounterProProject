@@ -28,19 +28,22 @@
     <ul id="side-menu" class="sidenav side-menu">
         <li><a class="subheader">Carb Counter Pro</a></li>
         <li><a href="/" class="waves-effect">Home</a></li>
-        <li><a href="/pages/login.html" class="waves-effect">Login</a></li>
+        <li class="logged-in">
+            <a href="#" class="waves-effect modal-trigger" data-target="modal-account">Account</a>
+        </li>
+        <li class="logged-in">
+            <a href="#" class="waves-effect" id="logout">Logout</a>
+        </li>
+        <li class="logged-out">
+            <a href="#" class="waves-effect modal-trigger" data-target="modal-login">Login</a>
+        </li>
+        <li class="logged-out">
+            <a href="#" class="waves-effect modal-trigger" data-target="modal-signup">Sign up</a>
+        </li>
         <li>
             <div class="divider"></div>
         </li>
-        <li><a href="/pages/logentry.html" class="waves-effect">Log/View Meals</a></li>
-        <li><a href="/pages/feedback.html" class="waves-effect">Feedback</a></li>
-        <li><a href="/pages/fooddatabase.html" class="waves-effect">Food Database</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="/pages/profile.html" class="waves-effect">Profile</a></li>
-        <li><a href="/pages/followers.html" class="waves-effect">Followers</a></li>
-        </li>
+        <li><a href="/pages/meals.html" class="waves-effect">View/Log Meals</a></li>
     </ul>
     <div class="container">
         <div class="section">
@@ -49,7 +52,40 @@
             <p>Please login or create an account to continue.</p>
         </div>
     </div>
+    <!-- SIGN UP MODAL-->
+    <div id ="modal-signup" class="modal">
+        <div class="modal-content">
+            <form id="new-user-form">
+                <div class="container">
+                    <h2>New User Registration</h1><br>
+                    <label for="signup-email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" id="signup-email" required>
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" id="signup-psw" required>
+                    <br>
+                    <button id="register" type="submit" class="waves-effect btn-flat">Register</button>
+                </div>
+            </form>  
+        </div>
+    </div>
+    <div id ="modal-login" class="modal">
+        <div class="modal-content">
+            <form id="login-form">
+                <div class="container">
+                    <h2>Login</h1><br>
+                    <label for="login-email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" id="login-email" required>
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password"" id="login-psw" required>
+                    <br>
+                    <button id="register" type="submit" class="waves-effect btn-flat">Login</button>
+                </div>
+            </form>  
+        </div>
+    </div>
     <script src="/js/ui.js"></script>
+    <script type="module" src="/js/auth.js"></script>
     <script src="/js/app.js"></script>
+    <script type="module" src="/js/db.js"></script>
 </body>
 </html>
